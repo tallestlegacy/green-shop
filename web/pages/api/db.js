@@ -1,8 +1,8 @@
 import { MongoClient } from "mongodb";
 
 //let uri = process.env.DB_URI;
-let uri = "mongodb://127.0.0.1:27017/"; // local DB
-//"mongodb+srv://root:denri@cluster0.a5lhx.mongodb.net/survey?retryWrites=true&w=majority";
+let uri = //"mongodb://127.0.0.1:27017/"; // local DB
+  "mongodb+srv://root:denri@cluster0.a5lhx.mongodb.net/survey?retryWrites=true&w=majority";
 
 let dbName = "green-shop";
 
