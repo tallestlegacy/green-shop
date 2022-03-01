@@ -1,8 +1,23 @@
-export default function useHandler(req, res) {
+import { getCollection } from "./db";
+
+export default async function useHandler(req, res) {
   const { query, method } = req;
+
+  let handler;
 
   switch (method) {
     case "GET":
-      res.status(200).json({ msg: "Hello from the other side" });
+      handler = get;
   }
+
+  const [status, json] = await handler(req);
+  res.json(json);
 }
+
+const get = async (req) => {
+  try {
+    return [200, { msg: "Working fine" }];
+  } catch (e) {
+    return { error: e };
+  }
+};
