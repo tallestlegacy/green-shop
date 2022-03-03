@@ -36,6 +36,7 @@ const getUsers = async (req) => {
 };
 
 const post = async (req) => {
+  console.log(req.body);
   try {
     const date = new Date();
     req.body.date = date;

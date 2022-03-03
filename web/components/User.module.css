@@ -1,0 +1,24 @@
+.user_container {
+  background-color: white;
+  box-shadow: 0 6px 12px -6px #0003;
+  padding: 1rem;
+
+  display: grid;
+  gap: 0.5rem;
+
+  transition: all ease 0.2s;
+}
+
+.user_container:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px #0003;
+}
+
+.name {
+  font-size: 1.2rem;
+}
+
+.span {
+  color: grey;
+}

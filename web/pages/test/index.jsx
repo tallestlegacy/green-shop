@@ -1,4 +1,10 @@
+//library imports
 import { useState, useEffect } from "react";
+import AddUser from "../../components/AddUser";
+
+// component imports
+import User from "../../components/User";
+import styles from "../../styles/Test.module.css";
 
 const Test = () => {
   const [users, setUsers] = useState([]);
@@ -8,27 +14,35 @@ const Test = () => {
     setLoading(true);
     fetch("/api/user")
       .then((res) => {
-        console.log(res);
-        res.json();
+        return res.json();
       })
       .then((data) => {
-        setUsers(data);
+        setUsers(data.users);
         setLoading(false);
       });
   }, []);
 
+  const addNewUser = (user) => {
+    setUsers([...users, user]);
+  };
+
   if (isLoading)
     return (
-      <main>
-        <h1>Loading</h1>
-      </main>
+      <div className={styles.container}>
+        <h1>Loading Users</h1>
+      </div>
     );
 
   return (
-    <>
-      <h1>Hello from the other side</h1>
-      <pre>{JSON.stringify(users, null, 2)}</pre>
-    </>
+    <div className={styles.container}>
+      <h1>Users</h1>
+      <div className={styles.users}>
+        {users.map((user, idx) => (
+          <User {...user} key={idx} />
+        ))}
+      </div>
+      <AddUser addNewUser={addNewUser} />
+    </div>
   );
 };
 

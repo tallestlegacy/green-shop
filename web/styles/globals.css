@@ -5,6 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   scroll-behavior: smooth;
+  background-color: #efefef;
 }
 
 a {
@@ -22,13 +23,20 @@ h2 {
   margin: 0;
 }
 
-button {
+button,
+input[type="submit"] {
   cursor: pointer;
   background-color: #000;
   color: #fff;
-  font-weight: 600px;
+  font-weight: 800;
   border: none;
+  outline: none;
   padding: 0.5rem 1rem;
   border-radius: 0.2rem;
   font-size: 1rem;
+}
+
+input[type="submit"] {
+  background-color: #0ef24c;
+  color: #000;
 }
