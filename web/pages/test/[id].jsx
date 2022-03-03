@@ -3,11 +3,28 @@ import { useEffect } from "react/";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+// component imports
+import styles from "../../styles/Test.module.css";
+import Product from "../../components/Product";
+
 const UserRoute = ({ id, user, products }) => {
   return (
-    <div>
-      {JSON.stringify(user, null, 2)}
-      {JSON.stringify(products, null, 2)}
+    <div className={styles.container}>
+      <h1>
+        {user.first_name} {user.last_name}
+      </h1>
+      <div className={styles.details}>
+        <span>{user.email}</span>
+        <span>{user.tel}</span>
+      </div>
+
+      <h3>{user.first_name}'s products </h3>
+      <div className="products">
+        {products &&
+          products.map((product, index) => {
+            return <Product key={index} />;
+          })}
+      </div>
     </div>
   );
 };

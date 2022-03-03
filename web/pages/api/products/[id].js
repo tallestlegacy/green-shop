@@ -17,11 +17,12 @@ const getProducts = async (req) => {
   const seller_id = req.query.id;
   try {
     const productCollection = await getCollection("products");
-    const products = await productCollection
-      .find({
-        seller_id: ObjectId(seller_id),
-      })
-      .toArray();
+    const products =
+      (await productCollection
+        .find({
+          seller_id: ObjectId(seller_id),
+        })
+        .toArray()) || [];
     return [200, { products }];
   } catch (e) {
     return [500, { error: e }];

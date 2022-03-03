@@ -9,3 +9,9 @@
   gap: 1rem;
   padding: 1rem;
 }
+
+.details {
+  display: grid;
+  gap: 0.5rem;
+  color: grey;
+}
