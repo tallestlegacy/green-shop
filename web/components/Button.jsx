@@ -1,5 +1,11 @@
+import styles from "./Button.module.css";
+
 const Button = ({ onClick, title }) => {
-  return <button onClick={onClick}>{title}</button>;
+  return (
+    <button className={styles.button} onClick={onClick}>
+      {title}
+    </button>
+  );
 };
 
 export default Button;

@@ -20,6 +20,10 @@
   padding: 1rem;
 }
 
+.form table {
+  display: grid;
+}
+
 .form input {
   border: solid 2px #0003;
   border-radius: 4px;

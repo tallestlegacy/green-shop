@@ -17,7 +17,7 @@ const Input = ({ name, title, type, value, setValue }) => {
           name={name}
           value={value[name] ? value[name] : ""}
           onChange={handleChange}
-          required
+          required={true}
         />
       </td>
     </tr>

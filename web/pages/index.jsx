@@ -10,10 +10,8 @@ const Home = () => {
 
       <main className={styles.main}>
         <div className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus fugiat
-          beatae id quisquam fugit consequuntur eveniet, sint, vitae
-          reprehenderit dolorum tenetur error nesciunt autem, repudiandae libero
-          perspiciatis! Perspiciatis, sit velit?
+          Green shop is an e-commerce platforms for farmers across the country,
+          used to establish a market for everyone and everything.
         </div>
         <div>
           <Link href="/test">

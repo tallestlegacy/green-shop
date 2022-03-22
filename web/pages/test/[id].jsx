@@ -6,16 +6,20 @@ import { useState } from "react";
 // component imports
 import styles from "../../styles/Test.module.css";
 import Product from "../../components/Product";
+import AddProduct from "../../components/AddProduct";
 
 const UserRoute = ({ id, user, products }) => {
+  const [isPopping, setisPopping] = useState(false);
+
   return (
     <div className={styles.container}>
       <h1>
         {user.first_name} {user.last_name}
       </h1>
       <div className={styles.details}>
-        <span>{user.email}</span>
-        <span>{user.tel}</span>
+        <span>User_id : {user._id}</span>
+        <span>Email : {user.email}</span>
+        <span>Tel : {user.tel}</span>
       </div>
 
       <h3>{user.first_name}'s products </h3>
@@ -25,6 +29,7 @@ const UserRoute = ({ id, user, products }) => {
             return <Product key={index} />;
           })}
       </div>
+      <AddProduct seller_id={user._id} />
     </div>
   );
 };

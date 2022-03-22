@@ -40,3 +40,10 @@ input[type="submit"] {
   background-color: #0ef24c;
   color: #000;
 }
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 4px;
+}
