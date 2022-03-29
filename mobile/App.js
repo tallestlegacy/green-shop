@@ -1,26 +1,21 @@
-import { useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { AnimatedTabBarNavigator } from "react-native-animated-nav-tab-bar";
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-import Login from "./pages/Login";
-import AppNavigation from "./navigation/AppNavigation";
-
-const Tabs = AnimatedTabBarNavigator();
-
-export default () => {
-  const [logedIn, setLogedIn] = useState(true);
-
-  const toggleLogin = () => {
-    setLogedIn(!logedIn);
-  };
-
-  if (!logedIn) {
-    return <Login toggle={toggleLogin} />;
-  }
-
+export default function App() {
   return (
-    <NavigationContainer>
-      <AppNavigation />
-    </NavigationContainer>
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
-};
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
